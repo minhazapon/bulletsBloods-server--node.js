@@ -62,7 +62,7 @@ async function run() {
      //gunsProductsData//
      app.get('/gunsData',  async(req, res) => {
         
-        const cursor = gunsCollection.find() 
+        const cursor = gunsProductsCollection.find() 
         const result = await cursor.toArray()
         res.send(result);
 
