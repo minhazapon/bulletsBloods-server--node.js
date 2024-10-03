@@ -43,6 +43,7 @@ async function run() {
     // Send a ping to confirm a successful connection
      
     const gunsCollection = client.db('bulletDB').collection('bulletData')
+    const gunsProductsCollection = client.db('gunsDB').collection('gunsData')
 
     //crud///
 
@@ -56,7 +57,17 @@ async function run() {
 
       })
      //products line data// 
-      
+
+
+     //gunsProductsData//
+     app.get('/gunsData',  async(req, res) => {
+        
+        const cursor = gunsCollection.find() 
+        const result = await cursor.toArray()
+        res.send(result);
+
+      })
+    //gunsProductsData//  
 
 
 
