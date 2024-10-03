@@ -77,7 +77,7 @@ async function run() {
         const query = { _id: new ObjectId(id) }
         const result = await gunsProductsCollection.findOne(query)
         res.send(result)
-
+ 
    })
   
    //gunsProductsData:ID//  
