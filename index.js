@@ -44,7 +44,7 @@ async function run() {
      
     const gunsCollection = client.db('bulletDB').collection('bulletData')
     const gunsProductsCollection = client.db('gunsDB').collection('gunsData')
-    const ExCollection = client.db('exprerienceDB').collection('exprerienceData')
+
 
     //crud///
 
@@ -80,6 +80,39 @@ async function run() {
  
     })
    //gunsProductsData:ID//  
+    
+   const addCollection = client.db('exprerienceDB').collection('exprerienceData')
+
+   ///itemsCrud//////
+
+
+   
+   ///add////
+
+    
+   app.post('/addData',  async(req, res) => {
+      
+     const addData = req.body 
+     console.log(addData) 
+     const result = await addCollection.insertOne(addData)
+     res.send(result)
+
+  })
+  
+  
+
+
+   ///add////
+
+
+
+
+
+
+
+
+
+   ///itemsCrud//////
 
   
 
