@@ -142,6 +142,40 @@ async function run() {
    })
 
 
+   app.put('/addData/:id',  async(req, res) => {
+      
+   
+       const id = req.params.id 
+       const UpdateUser = req.body 
+       console.log(id, UpdateUser) 
+       const filter = { _id: new ObjectId(id) }
+       const option = { upsert: true } 
+       const upDtUsr = req.body 
+       const gunZ = {
+
+          $set:{
+
+             name:  upDtUsr.name, 
+             price:  upDtUsr.price, 
+             brand:  upDtUsr.brand, 
+             photourl:  upDtUsr.photourl, 
+             category:  upDtUsr.category, 
+             description:  upDtUsr.description
+          
+ 
+          }
+
+
+       }
+
+       const result = await addCollection.updateOne(filter, gunZ, option)
+       res.send(result)
+   })
+
+
+
+
+
 
    //update//
 
