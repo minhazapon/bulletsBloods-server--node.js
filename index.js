@@ -44,6 +44,7 @@ async function run() {
      
     const gunsCollection = client.db('bulletDB').collection('bulletData')
     const gunsProductsCollection = client.db('gunsDB').collection('gunsData')
+    const ExCollection = client.db('exprerienceDB').collection('exprerienceData')
 
     //crud///
 
@@ -70,7 +71,6 @@ async function run() {
     //gunsProductsData//  
 
     //gunsProductsData:ID//  
-
     app.get('/gunsData/:id',  async(req, res) => {
       
         const id = req.params.id 
@@ -78,9 +78,10 @@ async function run() {
         const result = await gunsProductsCollection.findOne(query)
         res.send(result)
  
-   })
-  
+    })
    //gunsProductsData:ID//  
+
+  
 
 
     //crud///
