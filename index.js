@@ -7,8 +7,8 @@ const port = process.env.PORT || 5000
 
 
 
-console.log(process.env.DB_USERS)
-console.log(process.env.DB_PASS)
+console.log(process.env.DB_USERSBULLET)
+console.log(process.env.DB_PASSBULLET)
 
 app.use(cors())
 app.use(express.json());
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = `mongodb+srv://${process.env.DB_USERS}:${process.env.DB_PASS}@cluster0.ruz4b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = `mongodb+srv://${process.env.DB_USERSBULLET}:${process.env.DB_PASSBULLET}@cluster0.ruz4b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
